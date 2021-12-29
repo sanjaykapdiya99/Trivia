@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="mainActivityVM"
+            type="com.trivia.ui.activity.view_model.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.MainActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/mcqTest"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@{mainActivityVM.questionList}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtAnswer"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="@string/enterAnswer"
+            android:minLines="10"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_7sdp"
+            android:text="@={mainActivityVM.strUserAnswer}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@+id/txtQuestion"
+            app:layout_constraintStart_toStartOf="@+id/txtQuestion"
+            app:layout_constraintTop_toBottomOf="@+id/txtQuestion" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtnSubmit"
+            android:layout_width="0dp"
+            android:padding="@dimen/_15sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:onClick="@{(v)->mainActivityVM.clickOnSubmitButton(v)}"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:elevation="@dimen/_10sdp"
+            android:id="@+id/llLoader"
+            android:gravity="center"
+            android:visibility="@{mainActivityVM.showLoader ? View.VISIBLE : View.GONE}"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

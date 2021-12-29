@@ -1,0 +1,24 @@
+com/trivia/generated/callback/OnClickListener.java
+ com.trivia.generated.callback.OnClickListener
+ com.trivia.generated.callback.OnClickListener$Listener
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+com/trivia/BuildConfig.java
+ com.trivia.BuildConfig
+com/trivia/DataBindingTriggerClass.java
+ com.trivia.DataBindingTriggerClass
+com/trivia/DataBinderMapperImpl.java
+ com.trivia.DataBinderMapperImpl
+ com.trivia.DataBinderMapperImpl$InnerBrLookup
+ com.trivia.DataBinderMapperImpl$InnerLayoutIdLookup
+com/trivia/databinding/ActivityMainBinding.java
+ com.trivia.databinding.ActivityMainBinding
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/trivia/databinding/ActivityMainBindingImpl.java
+ com.trivia.databinding.ActivityMainBindingImpl
+ com.trivia.databinding.ActivityMainBindingImpl$1
+com/trivia/BR.java
+ com.trivia.BR
